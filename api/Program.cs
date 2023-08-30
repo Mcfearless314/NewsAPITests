@@ -1,19 +1,21 @@
+using infrastructure;
+using service;
+
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
+builder.Services.AddNpgsqlDataSource(Utilities.ProperlyFormattedConnectionString,
+    dataSourceBuilder => dataSourceBuilder.EnableParameterLogging());
+builder.Services.AddSingleton<Repository>();
+builder.Services.AddSingleton<Service>();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// Configure the HTTP request pipeline.
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseCors(options =>
 {
     options.SetIsOriginAllowed(origin => true)
@@ -22,10 +24,10 @@ app.UseCors(options =>
         .AllowCredentials();
 });
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = string.Empty;
+});
 app.MapControllers();
-
 app.Run();

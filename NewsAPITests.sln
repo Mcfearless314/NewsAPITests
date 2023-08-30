@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAPITests", "NewsAPITests\NewsAPITests.csproj", "{01555871-5310-4508-B5F3-FC9261DE8385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{63DDB2F8-22E7-4608-91F1-65CDF76E677D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure", "infrastructure\infrastructure.csproj", "{63DDB2F8-22E7-4608-91F1-65CDF76E677D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{4923B798-0A37-4711-B344-8DE8868F80BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "service\service.csproj", "{4923B798-0A37-4711-B344-8DE8868F80BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{719B4E60-77A9-4457-87C9-36E8F1E68B32}"
 EndProject
